@@ -93,7 +93,9 @@ class Menu:
                      9. THE SEARCH: PERSONAL PAPERS BY LATIFA AL-ZAYYAT, TRANSLATED BY SOPHIE BENNETT 
                      """)
         elif self.__selection == 6:
-            print(""" 1. """)
+            print(""" 1. The Return: Fathers, Sons and the Land in Between by Hisham Matar 
+                      2. In the Country of Men by Hisham Matar
+                      3. The Arab of the Future: A Childhood in the Middle by Riad Sattouf""")
 if __name__ == "__main__":
     welcome_text = """ Wecome to Shellf. We have multiple African books. you can choose based off of the country you prefer
                     ----------------------------------------------------------------------------------------------------
