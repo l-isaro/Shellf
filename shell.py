@@ -13,5 +13,10 @@ class Menu:
         return self.__selection
 
     @selection.setter
-        
-    
+    def selection(self, value):
+        """conditions"""
+        if not isinstance(value, int):
+            raise TypeError("Input must be an integer")
+        if value > 10 or value < 1:
+            raise ValueError("input out of range")    
+        self.__selection = selection   
