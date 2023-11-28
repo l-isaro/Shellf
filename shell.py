@@ -95,7 +95,10 @@ class Menu:
         elif self.__selection == 6:
             print(""" 1. The Return: Fathers, Sons and the Land in Between by Hisham Matar 
                       2. In the Country of Men by Hisham Matar
-                      3. The Arab of the Future: A Childhood in the Middle by Riad Sattouf""")
+                      3. The Arab of the Future: A Childhood in the Middle by Riad Sattouf
+                      4. Under the Tripoli Sky by Kamal Ben Hameda 
+                      5. The Shadows of Ghadame by Joëlle Stolz
+                      """)
 if __name__ == "__main__":
     welcome_text = """ Wecome to Shellf. We have multiple African books. you can choose based off of the country you prefer
                     ----------------------------------------------------------------------------------------------------
