@@ -31,19 +31,19 @@ class Menu:
                       3. The girl who smiled beads - Clementine Wamariya 
                          --------------------------------------------------------------------------
                          Store: https://www.amazon.com/Girl-Who-Smiled-Beads-Story/dp/0451495322
-                      4. The Barefoot – Scholastique 
+                      4. The Barefoot - Scholastique 
                          ---------------------------------------------------------------------------
                          
 
                       5. From Red Earth: A Rwandan Story of Healing and Forgiveness – Denise Uwimana
-                      6. Scars that Shape Us – Divine Akimana 
+                      6. Scars that Shape Us  Divine Akimana 
                       7. Love tails – Yves Muhizi
                       8. First Creation - Sandra Nadege
                       """)
             book = int(input("Enter the number of the book you would like to get more information on:"))
 
         elif self.__selection == 1:
-            print("""1. petals of blood by ngũgĩ wa thiong’o
+            print ("""1. petals of blood by ngũgĩ wa thiong’o 
                      2. the river and the source by margaret a. Ogola
                      3. one day i will write about this place: a memoir by binyavanga wainaina 
                      4. dust by yvonne adhiambo owuor
@@ -58,9 +58,9 @@ class Menu:
                      2. the shadow king by maaza mengiste
                      3. the beautiful things that heaven bears by dinaw mengestu
                      4. open my eyes, that i may see marvellous things by alice allan
-                     5. beneath the lion’s gaze by maaza mengiste
+                     5. beneath the lion's gaze by maaza mengiste
                      6. addis ababa noir by various
-                     7. the wife’s tale by aida edemariam
+                     7. the wife's tale by aida edemariam
                      8. shallow graves: a memoir of the ethiopia-eritrea war by richard reid
                      9. i want to die with a flag. ethiopia: my delusions and disillusionment by vartkes nalbandian
                      10. held at a distance: a rediscovery of ethiopia by rebecca g. Haile
@@ -94,6 +94,48 @@ class Menu:
                      """)
         elif self.__selection == 6:
             print(""" 1. """)
+
+class Rating:
+    """Initialize ratings class"""
+    print("""1. TREASURE TROVE OF BENEFITS AND VARIETY AT THE TABLE EDITED AND TRANSLATED BY NAWAL NASRALLAH = [],
+    2. BRAINS CONFOUNDED BY THE ODE OF ABU SHADUF EXPOUNDED EDITED AND TRANSLATED BY HUMPHREY DAVIES = [],
+    3. THE ESSENTIAL TAWFIQ AL-HAKIM ED. DENYS JOHNSON-DAVIES = [],
+    4. THE DAYS BY TAHA HUSSEIN, TRANSLATED BY E.H. PAXTON, HILARY WAYMENT, KENNETH CRAGG = [],
+    5. THE CALL OF THE CURLEW BY TAHA HUSSEIN, TRANSLATED BY A. B. AS-SAFI = [],
+    6. MIRAMAR BY NAGUIB MAHFOUZ, TRANSLATED BY FATMA MOUSSA MAHMOUD = [],
+    7. THE OPEN DOOR BY LATIFA AL-ZAYYAT, TRANSLATED BY MARILYN BOOTH = [],
+    8. THE MAN WHO LOST HIS SHADOW BY FATHY GHANEM, TRANSLATED BY DESMOND STEWART = [], 
+    9. THE SEARCH: PERSONAL PAPERS BY LATIFA AL-ZAYYAT, TRANSLATED BY SOPHIE BENNETT []""")
+
+    
+    def __init__(self, rating):
+        """initialize rating"""
+        self.__rating = rating
+    
+    
+
+    @property
+    def rating(self):
+        """assigns rating to rating"""
+        return self.__rating
+
+    @rating.setter
+    def rating(self, rate):
+        """conditions"""
+        if not isinstance(rate, int):
+            raise TypeError("Rating must be an integer")
+        if rate < 1 or rate > 5:
+            raise ValueError("Rating must be from 1 to 5")
+        self.__rating = rate
+
+    def append(rating):
+        list_1[i].values() == rating
+        print(list_1)
+
+
+
+
+        
 if __name__ == "__main__":
     welcome_text = """ Wecome to Shellf. We have multiple African books. you can choose based off of the country you prefer
                     ----------------------------------------------------------------------------------------------------
@@ -105,13 +147,25 @@ if __name__ == "__main__":
                     6. Egypt
                     7. Libya
                     8. South Africa
-                    9. zambia
+                    9. Zambia
                     10. DRC
+                    11. Reviews
                     """
     print(welcome_text)
-    countries = ["Rwanda", "Kenya","Ethiopia", "Nigeria","Ghana","Egypt","Libya", "South Africa", "Zambia", "DRC"]
+    countries = ["Rwanda", "Kenya","Ethiopia", "Nigeria","Ghana","Egypt","Libya", "South Africa", "Zambia", "DRC","Reviews"]
     selection = int(input("Input a number:")) - 1
     obj = Menu(selection)
     obj.display_books()
-    print(countries[obj.selection])
+    if selection == 11:
+        obj = Rating(self.__rating)
+        i = int(input ("What book do you want to rate:")) - 1
+        rating = int(input("What is your rating for this book: "))
+        list_1 = {
+        TREASURETROVEOFBENEFITSANDVARIETYATTHETABLEEDITEDANDTRANSLATEDBYNAWALNASRALLAH : 0
+         }
+        obj.append(rating)
+        
+        
+
+
     
