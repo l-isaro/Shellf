@@ -21,7 +21,6 @@ class Menu:
         self.__selection = value
 
     def display_books(self):
-        print(self.__selection, type(self.__selection))
 
         # Rwanda
         if self.__selection == 0:
