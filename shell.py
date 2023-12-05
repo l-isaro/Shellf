@@ -311,15 +311,17 @@ class Menu:
                      10. Congolese Wiskunde by In Koli Jean Bofane
                   """)
 
-    def read_book(self, book, rating=None):
-        if rating is not None:
-            self.book[book] = rating
-    
-    def get_average_rating(self):
-        total = 0
-        for i in self.book:
-            total += self.book[i]
-        return total / len(self.book)
+        elif self.__selection == 11:
+            def read_book(self, book, rating=None):
+                if rating is not None:
+                    self.book[book] = rating
+            
+            def get_average_rating(self):
+                total = 0
+                for i in self.book:
+                    total += self.book[i]
+                return total / len(self.book)
+
 if __name__ == "__main__":
     welcome_text = """ Welcome to Shellf. We have multiple African books. you can choose based off of the country you prefer
                     ----------------------------------------------------------------------------------------------------------
@@ -338,7 +340,7 @@ if __name__ == "__main__":
                     
                     """
     print(welcome_text)
-    countries = ["Rwanda", "Kenya","Ethiopia", "Nigeria","Ghana","Egypt","Libya", "South Africa", "Zambia", "DRC"]
+    countries = ["Rwanda", "Kenya","Ethiopia", "Nigeria","Ghana","Egypt","Libya", "South Africa", "Zambia", "DRC", "Reviews"]
     selection = int(input("Input a number:")) - 1
     obj = Menu(selection)
     obj.display_books()
