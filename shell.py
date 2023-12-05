@@ -104,7 +104,12 @@ class Menu:
                      2. Tail of the Blue Bird BY NII AYIKWEI PARKES
                      3. Ghana must go by Taiye Selasi
                      4. Homegoing by Yaa Gyasi
-                     5. """)
+                     5. The housemaid by Amma Darko
+                     6. Selected speeches by Kwame
+                     7. This earth, my brother by Kofi Awoonor
+                     8. Daughter in Exile: A Novel by Bisi Adjapon
+                     9. Fragments by Ayi Kwei Armah
+                     10. Fibbed by Elizabeth Agyemang""")
         # Egypt
         elif self.__selection == 5:
             print("""           6. Egypt
@@ -169,7 +174,16 @@ class Menu:
         # DRC
         elif self.__selection == 9:
             print("""          10. DRC
-                      1. The year of the gorilla by G """)
+                      1. The year of the gorilla by George Schaller
+                      2. Congo by Michael Crichton
+                      3. Refugee: A memoir by Emmanuel Mbolela
+                      4. The poisonwood Bible by Barbara Kingsolver
+                      5. Heart of darkness by Joseph Conrad
+                      6. Tram 83 by Fiston Mwanza Mujila
+                      7. Mr. Fix it by Richard Ali A Mutu
+                      8. Maison rouge by Leolina Leila Juma
+                      9. No palce to call home by J.J Cola
+                      10. Congolese Wiskunde by In Koli Jean Bofane""")
 
         # user wants to rate a book they read
         elif self.__selection == 10:
@@ -234,7 +248,7 @@ class Menu:
         return total / len(self.book)
 if __name__ == "__main__":
     welcome_text = """ Welcome to Shellf. We have multiple African books. you can choose based off of the country you prefer
-                    ----------------------------------------------------------------------------------------------------
+                    ----------------------------------------------------------------------------------------------------------
                     1. Rwanda
                     2. Kenya
                     3. Ethiopia
@@ -245,6 +259,9 @@ if __name__ == "__main__":
                     8. South Africa
                     9. Zambia
                     10. DRC
+
+                    choose 11 to review a book you've read
+                    
                     """
     print(welcome_text)
     countries = ["Rwanda", "Kenya","Ethiopia", "Nigeria","Ghana","Egypt","Libya", "South Africa", "Zambia", "DRC"]
