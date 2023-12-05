@@ -47,7 +47,9 @@ class Menu:
             book = int(input("Enter the number of the book you would like to get more information on:"))
 
         elif self.__selection == 1:
-            print("""1. petals of blood by ngũgĩ wa thiong’o
+            print("""           2. Kenya
+                     
+                     1. petals of blood by ngũgĩ wa thiong’o
                      2. the river and the source by margaret a. Ogola
                      3. one day i will write about this place: a memoir by binyavanga wainaina 
                      4. dust by yvonne adhiambo owuor
