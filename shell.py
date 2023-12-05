@@ -124,7 +124,114 @@ class Menu:
                      """)
         # Libya
         elif self.__selection == 6:
-            print(""" 1. """)
+            print("""           7. Libya
+                  
+                      1. The Return: Fathers, Sons and the Land in Between by Hisham Matar 
+                      2. In the Country of Men by Hisham Matar
+                      3. The Arab of the Future: A Childhood in the Middle by Riad Sattouf
+                      4. Under the Tripoli Sky by Kamal Ben Hameda 
+                      5. The Shadows of Ghadame by Joëlle Stolz
+                      6. Maps of the soul by Ahmed Fagih
+                      7. Gold dust by Ibrahim Al-koni
+                      8. Green book by Muammmar Gaddafi
+                      9. The lion's Gane by Nelson DeMille
+                      10. The puppet by Ibrahim Al-koni""")
+        # South Africa
+        elif self.__selection == 7:
+            print("""           8. South Africa
+                  
+                      1. Bitter fruit by Achmat Dangor
+                      2. The promise by Damon Galgut
+                      3. Portrait with keys by Ivan Vladislavic
+                      4. Young blood by Sifiso Mzobe
+                      5. The Dark Flood by Deon Meyer
+                      6. The scramble for Africa by Thomas Pakenham
+                      7. The quality of mercy by Siphiwe Gloria Ndiovu
+                      8. Another country by Karel Schoeman, 1984
+                      9. Zoo city by Lauren Beukes
+                      10. The grass is singing by Doris Lessing""")
+
+        # Zambia 
+        elif self.__Selection == 8:
+            print("""          9. Zambia
+                  
+                      1. The old draft by Namwali Serpell
+                      2. A cowrie of hope by Binwell Sinyangwe
+                      3. Patchwork by Ellen Banda-Aaku
+                      4. Kumukanda by Kayo Chingonyi
+                      5. Travel light, move fast by Alexandra Fuller
+                      6. The unheard by Josh Swiller
+                      7. North of south by Shiva Naipul
+                      8. The mourning bird by Mubanga Kalimamukwento
+                      9. Fever Dream by Lincoln Child
+                      10. The ukiwi Road by Dervla Murphy""")
+
+        # DRC
+        elif self.__selection == 9:
+            print("""          10. DRC
+                      1. The year of the gorilla by G """)
+
+        # user wants to rate a book they read
+        elif self.__selection == 10:
+            print("""           1. Rwanda
+                  
+                      1. Between Wild and Free - Caroline Numuhire
+                      2. Barefoot in Germany - Tete Loeper 
+                      3. The girl who smiled beads - Clementine Wamariya 
+                      4. The Barefoot - Scholastique 
+                      5. From Red Earth: A Rwandan Story of Healing and Forgiveness - Denise Uwimana
+                      6. Scars that Shape Us - Divine Akimana 
+                      7. Love tails - Yves Muhizi
+                      8. First Creation - Sandra Nadege
+                      
+                                 2. Kenya
+                  
+                     1. petals of blood by ngũgĩ wa thiong'o
+                     2. the river and the source by margaret a. Ogola
+                     3. one day i will write about this place: a memoir by binyavanga wainaina 
+                     4. dust by yvonne adhiambo owuor
+                     5. the promised land by grace ogot
+                     6. nairobi heat by mukoma wa ngugi
+                     7. population, tradition, and environmental control in colonial kenya by martin s. Shanguhyia
+                     8. facing mount kenya by jomo kenyatta
+                     9. history of resistance in kenya 1884-2002 by maina wa kĩnyattĩ
+                  
+                                3. Ethi0pia
+                  
+                     1. cutting for stone by abraham verghese
+                     2. the shadow king by maaza mengiste
+                     3. the beautiful things that heaven bears by dinaw mengestu
+                     4. open my eyes, that i may see marvellous things by alice allan
+                     5. beneath the lion's gaze by maaza mengiste
+                     6. addis ababa noir by various
+                     7. the wife's tale by aida edemariam
+                     8. shallow graves: a memoir of the ethiopia-eritrea war by richard reid
+                     9. i want to die with a flag. ethiopia: my delusions and disillusionment by vartkes nalbandian
+                     10. held at a distance: a rediscovery of ethiopia by rebecca g. Haile
+                     
+                                4. Nigeria 
+                  
+                      1. COCONUT: A BLACK GIRL, A WHITE FOSTER FAMILY, AND THE SEARCH FOR BELONGING AND IDENTITY BY FLORENCE OÒLAÌJIÌDEÌ
+                      2. HOPE AND GLORY BY JENDELLA BENSON
+                      4. YOU MADE A FOOL OF DEATH WITH YOUR BEAUTY BY AKWAEKE EMEZI
+                      5. A COASTLINE IS AN IMMEASURABLE THING: A MEMOIR ACROSS THREE CONTINENTS BY MARY-ALICE DANIEL
+                      6. THE LEGACY OF MOLLY SOUTHBOURNE (THE MOLLY SOUTHBOURNE TRILOGY BOOK 3) BY TADE THOMPSON
+                      7. WHERE THE CHILDREN TAKE US: HOW ONE FAMILY ACHIEVED THE UNIMAGINABLE BY ZAIN E. ASHER
+                      8. NOTES FROM A YOUNG BLACK CHEF BY KWAME ONWUACHI WITH JOSHUA DAVID STEIN
+                      9. WAHALA: A NOVEL BY NIKKI MAY
+                      10. OPERATION SISTERHOOD BY OLUGBEMISOLA RHUDAY-PERKOVICH
+                      
+                      """)
+
+    def read_book(self, book, rating=None):
+        if rating is not None:
+            self.book[book] = rating
+    
+    def get_average_rating(self):
+        total = 0
+        for i in self.book:
+            total += self.book[i]
+        return total / len(self.book)
 if __name__ == "__main__":
     welcome_text = """ Welcome to Shellf. We have multiple African books. you can choose based off of the country you prefer
                     ----------------------------------------------------------------------------------------------------
