@@ -157,7 +157,7 @@ class Menu:
                       10. The grass is singing by Doris Lessing""")
 
         # Zambia 
-        elif self.__Selection == 8:
+        elif self.__selection == 8:
             print("""          9. Zambia
                   
                       1. The old draft by Namwali Serpell
