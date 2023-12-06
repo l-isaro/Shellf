@@ -370,13 +370,13 @@ if __name__ == "__main__":
                     """
     print(welcome_text)
     countries = ["Rwanda", "Kenya","Ethiopia", "Nigeria","Ghana","Egypt","Libya", "South Africa", "Zambia", "DRC", "Reviews"]
-    selection = int(input("Input a number:")) - 1
+    selection = int(input("Input a number: ")) - 1
     obj = Menu(selection)
     obj.display_books()
-    answer = input("Do you want to rate a book?(Yes/No)")
+    answer = input("Do you want to rate a book?(Yes/No): ")
     if answer == "Yes":
-        book = int(input("Enter the country and book number:"))
-        rating = int(input("Enter your rating(1-5):"))
+        book = int(input("Enter the country and book number: "))
+        rating = int(input("Enter your rating(1-5): "))
         obj.read_book(book, rating)
         print(obj.book)
 
