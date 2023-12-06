@@ -164,7 +164,7 @@ class Menu:
                      https://www.amazon.com/Books-Online/s?rh=n%3A283155%2Cp_27%3AOnline""")
 
         # Zambia 
-        elif self.__Selection == 8:
+        elif self.__selection == 8:
             print("""          9. Zambia
                   
                       1. The old draft by Namwali Serpell
@@ -353,7 +353,7 @@ if __name__ == "__main__":
                     choose 11 to rate a book you have read
                     """
     print(welcome_text)
-    countries = ["Rwanda", "Kenya","Ethiopia", "Nigeria","Ghana","Egypt","Libya", "South Africa", "Zambia", "DRC"]
+    countries = ["Rwanda", "Kenya","Ethiopia", "Nigeria","Ghana","Egypt","Libya", "South Africa", "Zambia", "DRC", "Reviews"]
     selection = int(input("Input a number:")) - 1
     obj = Menu(selection)
     obj.display_books()
