@@ -74,7 +74,7 @@ class Menu:
                   """)
          # Ethiopia
         elif self.__selection == 2:
-            print("""           3. Ethi0pia
+            print("""           3. Ethiopia
                   
                      1. cutting for stone by abraham verghese
                      2. the shadow king by maaza mengiste
@@ -210,7 +210,8 @@ class Menu:
 
         # user wants to rate a book they read
         elif self.__selection == 10:
-                print("""           1. Rwanda
+                print("""           
+                                    1. Rwanda
                     
                         1. Between Wild and Free - Caroline Numuhire
                         2. Barefoot in Germany - Tete Loeper 
@@ -233,7 +234,7 @@ class Menu:
                         8. facing mount kenya by jomo kenyatta
                         9. history of resistance in kenya 1884-2002 by maina wa kĩnyattĩ
                     
-                                    3. Ethi0pia
+                                    3. Ethiopia
                     
                         1. cutting for stone by abraham verghese
                         2. the shadow king by maaza mengiste
@@ -283,7 +284,7 @@ class Menu:
                         8. THE MAN WHO LOST HIS SHADOW BY FATHY GHANEM, TRANSLATED BY DESMOND STEWART 
                         9. THE SEARCH: PERSONAL PAPERS BY LATIFA AL-ZAYYAT, TRANSLATED BY SOPHIE BENNETT 
                     
-                                7. Libya
+                                    7. Libya
                     
                         1. The Return: Fathers, Sons and the Land in Between by Hisham Matar 
                         2. In the Country of Men by Hisham Matar
@@ -296,7 +297,7 @@ class Menu:
                         9. The lion's Gane by Nelson DeMille
                         10. The puppet by Ibrahim Al-koni
                     
-                                8. South Africa
+                                    8. South Africa
                     
                         1. Bitter fruit by Achmat Dangor
                         2. The promise by Damon Galgut
@@ -308,7 +309,8 @@ class Menu:
                         8. Another country by Karel Schoeman, 1984
                         9. Zoo city by Lauren Beukes
                         10. The grass is singing by Doris Lessing
-                                9. Zambia
+                                
+                                    9. Zambia
                     
                         1. The old draft by Namwali Serpell
                         2. A cowrie of hope by Binwell Sinyangwe
@@ -321,7 +323,8 @@ class Menu:
                         9. Fever Dream by Lincoln Child
                         10. The ukiwi Road by Dervla Murphy
                     
-                                10. DRC
+                                    10. DRC
+                      
                         1. The year of the gorilla by George Schaller
                         2. Congo by Michael Crichton
                         3. Refugee: A memoir by Emmanuel Mbolela
