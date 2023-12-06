@@ -373,10 +373,10 @@ if __name__ == "__main__":
     selection = int(input("Input a number:")) - 1
     obj = Menu(selection)
     obj.display_books()
-    answer = input("do you want to rate a book?")
-    if answer == "yes":
-        book = int(input("enter the country and book number:"))
-        rating = int(input("enter your rating(1-5):"))
+    answer = input("Do you want to rate a book?(Yes/No)")
+    if answer == "Yes":
+        book = int(input("Enter the country and book number:"))
+        rating = int(input("Enter your rating(1-5):"))
         obj.read_book(book, rating)
         print(obj.book)
 
