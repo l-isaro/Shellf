@@ -340,6 +340,7 @@ class Menu:
         for i in keys_:
             if i == book and  rating is not None:
                 self.book[i].append(rating)
+        return self.book
 
     
     def get_average_rating(self):
@@ -347,6 +348,7 @@ class Menu:
         for i in self.book.values():
             total += self.book[i]
         return total / len(self.book)
+
 if __name__ == "__main__":
     welcome_text = """ Welcome to Shellf. We have multiple African books. you can choose based off of the country you prefer
                     ----------------------------------------------------------------------------------------------------------
@@ -374,6 +376,8 @@ if __name__ == "__main__":
         rating = input("enter your rating(1-5):")
         obj.read_book(book, rating)
         print(obj.book)
+
+
 
 
     
