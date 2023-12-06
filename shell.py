@@ -35,17 +35,13 @@ class Menu:
 
         # Rwanda
         if self.__selection == 0:
-            print("""          1. Rwanda
+            print("""          
+                                1. Rwanda
                   
                       1. Between Wild and Free - Caroline Numuhire
                       2. Barefoot in Germany - Tete Loeper 
                       3. The girl who smiled beads - Clementine Wamariya 
-                         --------------------------------------------------------------------------
-                         Store: https://www.amazon.com/Girl-Who-Smiled-Beads-Story/dp/0451495322
                       4. The Barefoot – Scholastique 
-                         ---------------------------------------------------------------------------
-                         
-
                       5. From Red Earth: A Rwandan Story of Healing and Forgiveness – Denise Uwimana
                       6. Scars that Shape Us – Divine Akimana 
                       7. Love tails – Yves Muhizi
@@ -54,7 +50,7 @@ class Menu:
                       You can purchase any of these books on Amazon: 
                       https://www.amazon.com/Books-Online/s?rh=n%3A283155%2Cp_27%3AOnline
                       """)
-            book = int(input("Enter the number of the book you would like to get more information on:"))
+            
 
         elif self.__selection == 1:
             print("""           2. Kenya
