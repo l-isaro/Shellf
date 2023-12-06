@@ -369,7 +369,7 @@ if __name__ == "__main__":
                     9. Zambia
                     10. DRC
                     
-                    choose 11 to rate a book you have read
+                    Choose 11 to rate a book you have read
                     """
     print(welcome_text)
     countries = ["Rwanda", "Kenya","Ethiopia", "Nigeria","Ghana","Egypt","Libya", "South Africa", "Zambia", "DRC", "Reviews"]
