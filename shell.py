@@ -335,13 +335,16 @@ class Menu:
                     """)
             
 
-    def read_book(self, book, rating=None):
+    
+
+    def read_book(self, book, rating):
         keys_ = self.book.keys()
         for i in keys_:
+            if rating > 5 or rating < 1:
+                raise ValueError("Rating must be from 1 -5")
             if i == book and  rating is not None:
                 self.book[i].append(rating)
         return self.book
-
     
     def get_average_rating(self):
         total = 0
@@ -373,7 +376,7 @@ if __name__ == "__main__":
     answer = input("do you want to rate a book?")
     if answer == "yes":
         book = int(input("enter the country and book number:"))
-        rating = input("enter your rating(1-5):")
+        rating = int(input("enter your rating(1-5):"))
         obj.read_book(book, rating)
         print(obj.book)
 
