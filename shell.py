@@ -17,17 +17,6 @@ class Menu:
     def __init__(self, selection):
         """initialize selection"""
         self.__selection = selection
-        self.book = {11: [], 12: [], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [],
-                     21: [], 22: [], 23: [], 24: [], 25: [], 26: [], 27: [], 28: [], 29: [], 
-                     31: [], 32: [], 33: [], 34: [], 35: [], 36: [], 37: [], 38: [], 39: [], 310: [],
-                     41: [], 42: [], 43: [], 44: [], 45: [], 46: [], 47: [], 48: [], 49: [], 410: [],
-                     51: [], 52: [], 53: [], 54: [], 55: [], 56: [], 57: [], 58: [], 59: [], 510: [],
-                     61: [], 62: [], 63: [], 64: [], 65: [], 66: [], 67: [], 68: [], 69: [], 
-                     71: [], 72: [], 73: [], 74: [], 75: [], 76: [], 77: [], 78: [], 79: [], 710: [],
-                     81: [], 82: [], 83: [], 84: [], 85: [], 86: [], 87: [], 88: [], 89: [], 810: [],
-                     91: [], 92: [], 93: [], 94: [], 95: [], 96: [], 97: [], 98: [], 99: [], 910: [],
-                     101: [], 102: [], 103: [], 104: [], 105: [], 106: [], 107: [], 108: [], 109: [], 1010: [], 
-                     }
 
     @property
     def selection(self):
@@ -342,37 +331,38 @@ class Menu:
                     9. No palce to call home by J.J Cola
                     10. Congolese Wiskunde by In Koli Jean Bofane
                 """)
-            book_name = input("what is the name of the book:")
+            book_name = input("what is the name of the book:").lower()
             retrieve_rate = "SELECT AVG(rating) FROM book_ratings WHERE title = %s"
             mycursor.execute(retrieve_rate, (book_name,))
-            average_rating = mycursor.fetchone()
+            average_rating = int(mycursor.fetchone())
             print(f"the average rating of {book_name} is {average_rating}")
 
 
 if __name__ == "__main__":
-    welcome_text = """ Welcome to Shellf. We have multiple African books. you can choose based off of the country you prefer
-                    ----------------------------------------------------------------------------------------------------------
-                    1. Rwanda
-                    2. Kenya
-                    3. Ethiopia
-                    4. Nigeria
-                    5. Ghana
-                    6. Egypt
-                    7. Libya
-                    8. South Africa
-                    9. Zambia
-                    10. DRC
+    welcome_text = """ Explore a diverse collection of books authored by Africans in this program. 
+                       Simply input the country number to discover a curated selection of literature from the desired African nation.
+                        ----------------------------------------------------------------------------------------------------------
+                        1. Rwanda
+                        2. Kenya
+                        3. Ethiopia
+                        4. Nigeria
+                        5. Ghana
+                        6. Egypt
+                        7. Libya
+                        8. South Africa
+                        9. Zambia
+                        10. DRC
                     
-                    Choose 11 to see the rating of a book
+                        Choose 11 to see the rating of a book
                     """
     print(welcome_text)
     countries = ["Rwanda", "Kenya", "Ethiopia", "Nigeria", "Ghana", "Egypt", "Libya", "South Africa", "Zambia", "DRC", "Reviews"]
     choice = int(input("Input a number: ")) - 1
     obj = Menu(choice)
     obj.display_books()
-    answer = input("Do you want to rate a book?(Yes/No): ")
+    answer = input("Do you want to rate a book?(Yes/No): ").lower()
     if answer == "yes":
-        book_title = str(input("enter the book you would like to rate:"))
+        book_title = (input("enter the book you would like to rate:")).lower()
         rating = int(input("enter the rating(1-5): "))
 
         try:
