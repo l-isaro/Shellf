@@ -1,5 +1,5 @@
 import mysql.connector
-mydb = mysql.connector.connect(host='localhost', user='root', passwd='password123')
+mydb = mysql.connector.connect(host='DESKTOP-CNV5OOO', user='root', passwd='xxxxxxx')
 
 mycursor = mydb.cursor()
 mycursor.execute("CREATE DATABASE books")
@@ -345,7 +345,7 @@ class Menu:
                     """)
             
     def rate_book(self):
-    
+        pass
 
     def read_book(self, book, rating):
         keys_ = self.book.keys()
