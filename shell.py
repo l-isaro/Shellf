@@ -1,22 +1,22 @@
 import mysql.connector
-mydb = mysql.connector.connect(host='localhost', user='root', passwd='password123')
+mydb = mysql.connector.connect(host='localhost', user='root', passwd='password123', database='books')
 
 mycursor = mydb.cursor()
-mycursor.execute("CREATE DATABASE books")
-table_query = """ CREATE TABLE book_ratings(
-                        id INTEGER PRIMARY KEY AUTOINCREMENT
-                        title VARCHAR(100) NOT NULL
-                        rating INTEGER );"""
+mycursor.execute("CREATE DATABASE IF NOT EXISTS books;")
+table_query = """ CREATE TABLE IF NOT EXISTS book_ratings(
+                        id int AUTO_INCREMENT,
+                        title varchar(100) NOT NULL,
+                        rating int,
+                        PRIMARY KEY(id));"""
 mycursor.execute(table_query)
-mydb.commit()
-mydb.close()
+
 
 class Menu:
     """Displays the countries to choose from."""
     def __init__(self, selection):
         """initialize selection"""
         self.__selection = selection
-        self.book = {11:[], 12: [], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [],  
+        self.book = {11: [], 12: [], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [],
                      21: [], 22: [], 23: [], 24: [], 25: [], 26: [], 27: [], 28: [], 29: [], 
                      31: [], 32: [], 33: [], 34: [], 35: [], 36: [], 37: [], 38: [], 39: [], 310: [],
                      41: [], 42: [], 43: [], 44: [], 45: [], 46: [], 47: [], 48: [], 49: [], 410: [],
@@ -28,7 +28,6 @@ class Menu:
                      101: [], 102: [], 103: [], 104: [], 105: [], 106: [], 107: [], 108: [], 109: [], 1010: [], 
                      }
 
-    
     @property
     def selection(self):
         """assigns selection to selection"""
@@ -61,7 +60,6 @@ class Menu:
                       You can purchase any of these books on Amazon: 
                       https://www.amazon.com/Books-Online/s?rh=n%3A283155%2Cp_27%3AOnline
                       """)
-            
 
         elif self.__selection == 1:
             print("""           2. Kenya
@@ -343,9 +341,6 @@ class Menu:
                         9. No palce to call home by J.J Cola
                         10. Congolese Wiskunde by In Koli Jean Bofane
                     """)
-            
-    def rate_book(self):
-        pass
 
     def read_book(self, book, rating):
         keys_ = self.book.keys()
@@ -379,16 +374,25 @@ if __name__ == "__main__":
                     Choose 11 to rate a book you have read
                     """
     print(welcome_text)
-    countries = ["Rwanda", "Kenya","Ethiopia", "Nigeria","Ghana","Egypt","Libya", "South Africa", "Zambia", "DRC", "Reviews"]
+    countries = ["Rwanda", "Kenya", "Ethiopia", "Nigeria", "Ghana", "Egypt", "Libya", "South Africa", "Zambia", "DRC", "Reviews"]
     choice = int(input("Input a number: ")) - 1
     obj = Menu(choice)
     obj.display_books()
     answer = input("Do you want to rate a book?(Yes/No): ")
-    if answer == "Yes":
-        book = int(input("Enter the country and book number: "))
-        rating = int(input("Enter your rating(1-5): "))
-        obj.read_book(book, rating)
-        print(obj.book)
+    if answer == "yes":
+        book_title = str(input("enter the book you would like to rate:"))
+        rating = int(input("enter the rating(1-5): "))
+
+        try:
+            insert_query = "INSERT INTO book_ratings (title, rating) VALUES(%s, %s)"
+            mycursor.execute(insert_query, (book_title, rating))
+            mydb.commit()
+            print("rating successful!")
+        except mysql.connector.Error as err:
+            print(f"Error: {err}")
+        finally:
+            mydb.close()
+
 
 
 
