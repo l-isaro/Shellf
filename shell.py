@@ -1,7 +1,18 @@
+import mysql.connector
+mydb = mysql.connector.connect(host='localhost', user='root', passwd='password123')
+
+mycursor = mydb.cursor()
+mycursor.execute("CREATE DATABASE books")
+table_query = """ CREATE TABLE book_ratings(
+                        id INTEGER PRIMARY KEY AUTOINCREMENT
+                        title VARCHAR(100) NOT NULL
+                        rating INTEGER );"""
+mycursor.execute(table_query)
+mydb.commit()
+mydb.close()
+
 class Menu:
     """Displays the countries to choose from."""
-    
-
     def __init__(self, selection):
         """initialize selection"""
         self.__selection = selection
@@ -20,7 +31,7 @@ class Menu:
     
     @property
     def selection(self):
-        """assigns selction to selection"""
+        """assigns selection to selection"""
         return self.__selection
 
     @selection.setter
@@ -333,7 +344,7 @@ class Menu:
                         10. Congolese Wiskunde by In Koli Jean Bofane
                     """)
             
-
+    def rate_book(self):
     
 
     def read_book(self, book, rating):
@@ -369,8 +380,8 @@ if __name__ == "__main__":
                     """
     print(welcome_text)
     countries = ["Rwanda", "Kenya","Ethiopia", "Nigeria","Ghana","Egypt","Libya", "South Africa", "Zambia", "DRC", "Reviews"]
-    selection = int(input("Input a number: ")) - 1
-    obj = Menu(selection)
+    choice = int(input("Input a number: ")) - 1
+    obj = Menu(choice)
     obj.display_books()
     answer = input("Do you want to rate a book?(Yes/No): ")
     if answer == "Yes":
@@ -382,5 +393,4 @@ if __name__ == "__main__":
 
 
 
-    
     
