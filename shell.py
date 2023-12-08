@@ -339,41 +339,42 @@ class Menu:
 
 
 if __name__ == "__main__":
-    welcome_text = """ Explore a diverse collection of books authored by Africans in this program. 
-                       Simply input the country number to discover a curated selection of literature from the desired African nation.
-                        ----------------------------------------------------------------------------------------------------------
-                        1. Rwanda
-                        2. Kenya
-                        3. Ethiopia
-                        4. Nigeria
-                        5. Ghana
-                        6. Egypt
-                        7. Libya
-                        8. South Africa
-                        9. Zambia
-                        10. DRC
-                    
-                        Choose 11 to see the rating of a book
-                    """
-    print(welcome_text)
-    countries = ["Rwanda", "Kenya", "Ethiopia", "Nigeria", "Ghana", "Egypt", "Libya", "South Africa", "Zambia", "DRC", "Reviews"]
-    choice = int(input("Input a number: ")) - 1
-    obj = Menu(choice)
-    obj.display_books()
-    answer = input("Do you want to rate a book?(Yes/No): ").lower()
-    if answer == "yes":
-        book_title = (input("enter the book you would like to rate:")).lower()
-        rating = int(input("enter the rating(1-5): "))
+    while True:
+        welcome_text = """ Explore a diverse collection of books authored by Africans in this program. 
+    Simply input the country number to discover a curated selection of literature from the desired African nation.
+    ----------------------------------------------------------------------------------------------------------
+                            1. Rwanda
+                            2. Kenya
+                            3. Ethiopia
+                            4. Nigeria
+                            5. Ghana
+                            6. Egypt
+                            7. Libya
+                            8. South Africa
+                            9. Zambia
+                            10. DRC
+                        
+                            Choose 11 to see the rating of a book
+                        """
+        print(welcome_text)
+        countries = ["Rwanda", "Kenya", "Ethiopia", "Nigeria", "Ghana", "Egypt", "Libya", "South Africa", "Zambia", "DRC", "Reviews"]
+        choice = int(input("Input a number: ")) - 1
+        obj = Menu(choice)
+        obj.display_books()
+        answer = input("Do you want to rate a book?(Yes/No): ").lower()
+        if answer == "yes":
+            book_title = (input("enter the book you would like to rate:")).lower()
+            rating = int(input("enter the rating(1-5): "))
 
-        try:
-            insert_query = "INSERT INTO book_ratings (title, rating) VALUES(%s, %s)"
-            mycursor.execute(insert_query, (book_title, rating))
-            mydb.commit()
-            print("rating successful!")
-        except mysql.connector.Error as err:
-            print(f"Error: {err}")
-        finally:
-            mydb.close()
+            try:
+                insert_query = "INSERT INTO book_ratings (title, rating) VALUES(%s, %s)"
+                mycursor.execute(insert_query, (book_title, rating))
+                mydb.commit()
+                print("rating successful!")
+            except mysql.connector.Error as err:
+                print(f"Error: {err}")
+            finally:
+                mydb.close()
 
 
 
