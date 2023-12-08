@@ -334,7 +334,7 @@ class Menu:
             book_name = input("what is the name of the book:").lower()
             retrieve_rate = "SELECT AVG(rating) FROM book_ratings WHERE title = %s"
             mycursor.execute(retrieve_rate, (book_name,))
-            average_rating = int(mycursor.fetchone())
+            average_rating = mycursor.fetchone()
             print(f"the average rating of {book_name} is {average_rating}")
 
 
