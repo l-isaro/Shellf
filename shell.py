@@ -8,7 +8,13 @@ table_query = """ CREATE TABLE IF NOT EXISTS book_ratings(
                         title varchar(100) NOT NULL,
                         rating int,
                         PRIMARY KEY(id));"""
+review_table = """ CREATE TABLE IF NOT EXISTS book_reviews(
+                        id int AUTO_INCREMENT,
+                        book_title varchar(100),
+                        review varchar(255),
+                        PRIMARY KEY(id));"""
 mycursor.execute(table_query)
+mycursor.execute(review_table)
 mydb.commit()
 
 
@@ -337,6 +343,18 @@ class Menu:
             average_rating = mycursor.fetchone()
             print(f"the average rating of {book_name} is {average_rating}")
 
+        elif self.__selection == 11:
+            title = input("Enter the title of the book:")
+            retrieve_reviews = "SELECT review FROM book_reviews WHERE book_title = %s"
+            mycursor.execute(retrieve_reviews, (title,))
+            reviews = mycursor.fetchall()
+
+            if not reviews:
+                print("No reviews found for this book")
+            else:
+                for book_review in reviews:
+                    print(book_review)
+
 
 if __name__ == "__main__":
     while True:
@@ -354,7 +372,7 @@ if __name__ == "__main__":
                             9. Zambia
                             10. DRC
                         
-                            Choose 11 to see the rating of a book
+                            Choose 11 to see the rating of a book and 12 to see reviews 
                         """
         print(welcome_text)
         countries = ["Rwanda", "Kenya", "Ethiopia", "Nigeria", "Ghana", "Egypt", "Libya", "South Africa", "Zambia", "DRC", "Reviews"]
@@ -373,8 +391,22 @@ if __name__ == "__main__":
                 print("rating successful!")
             except mysql.connector.Error as err:
                 print(f"Error: {err}")
+
+        answer2 = input("Do you want to review a book ?").lower()
+        if answer2 == "yes":
+            try:
+                review_book = input("Enter the book you would like to review:")
+                review = input("Enter your review:")
+                insert_review = "INSERT INTO book_reviews (book_title, review) VALUES(%s, %s)"
+                mycursor.execute(insert_review, (review_book, review))
+                mydb.commit()
+                print(f"{review_book} reviewed successfully!")
+            except mysql.connector.Error as err:
+                print(f"Error: {err}")
             finally:
                 mydb.close()
+
+
 
 
 
