@@ -1,6 +1,5 @@
 ﻿# Welcome to Shellf!
 Shellf is a book  recommendation application contains a list of books from different countries aimed at educating one fully on the culture of the select country.
-![Shellf](https://github.com/[l-isaro]/[Shellf]/blob/[main]/Shellf.png?raw=true)
 
 
 # Countries and Books.
@@ -215,7 +214,7 @@ Shellf is a book  recommendation application contains a list of books from diffe
 10. Congolese Wiskunde by In Koli Jean Bofane
 
 ##  User Experience.
-![UX](https://github.com/[l-isaro]/[Shellf]/blob/[main]/ux.png?raw=true)
+
 
 
 
