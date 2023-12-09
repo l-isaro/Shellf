@@ -353,7 +353,9 @@ class Menu:
                 print("No reviews found for this book")
             else:
                 for book_review in reviews:
-                    print(book_review)
+                    split_review = book_review[0].split("|")
+                    lines = '\n'.join(split_review)
+                    print(lines)
 
 
 if __name__ == "__main__":
@@ -396,7 +398,7 @@ if __name__ == "__main__":
         if answer2 == "yes":
             try:
                 review_book = input("Enter the book you would like to review:")
-                review = input("Enter your review:")
+                review = input("Enter your review:") + "|"
                 insert_review = "INSERT INTO book_reviews (book_title, review) VALUES(%s, %s)"
                 mycursor.execute(insert_review, (review_book, review))
                 mydb.commit()
