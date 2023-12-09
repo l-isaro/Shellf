@@ -214,6 +214,20 @@ Shellf is a book  recommendation application contains a list of books from diffe
 10. Congolese Wiskunde by In Koli Jean Bofane
 
 ##  User Experience.
+1.User is greeted with a menu explaining what shellf is.
+
+2.The user sees a menu of ten countries each with 10 book recommendations.
+
+3.Users are prompted for a country selection from the list of ten countries each represented by a digit from 1 to 10.
+
+4.The user can then view the book recommendations as well as a link on where to buy them.
+
+5.The user is also automatically prompted to rate a book.
+
+6.The user enters the title then the rating which is from 1-5, five being the best.
+
+7.The users feedback on rating is stored in a shellf  MySQL database. The user can view the average rating of a book by selecting 11.
+
 
 
 
